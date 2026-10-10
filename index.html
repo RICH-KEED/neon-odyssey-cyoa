@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neon Odyssey: Cyberpunk CYOA Game</title>
+    <meta name="description" content="A dynamic Choose Your Own Adventure interactive cyberpunk RPG built with HTML, CSS, JavaScript, and Web Audio API.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Orbitron:wght@600;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="crt-overlay"></div>
+    <div class="scanlines"></div>
+
+    <div class="container">
+        <!-- Header -->
+        <header class="game-header">
+            <div class="logo-area">
+                <span class="system-status">SYS.LOC // NEO-VERIDIA SECTOR 7</span>
+                <h1 class="glitch-title" data-text="NEON ODYSSEY">NEON ODYSSEY</h1>
+                <p class="subtitle">CHOOSE YOUR OWN ADVENTURE // CYBERPUNK 2084</p>
+            </div>
+            <div class="header-controls">
+                <button id="sound-btn" class="ctrl-btn" title="Toggle Synthesizer Audio">🔊 SFX ON</button>
+                <button id="restart-btn" class="ctrl-btn" title="Restart Game">↺ REBOOT</button>
+            </div>
+        </header>
+
+        <!-- Main Game Layout -->
+        <main class="game-viewport">
+            <!-- Left HUD: Player Vitals & Inventory -->
+            <aside class="hud-panel">
+                <h2 class="hud-title">NEURAL HUD</h2>
+                
+                <div class="stat-card">
+                    <div class="stat-header">
+                        <span>HEALTH</span>
+                        <span id="hp-value">100%</span>
+                    </div>
+                    <div class="bar-container">
+                        <div id="hp-bar" class="stat-bar hp-fill" style="width: 100%;"></div>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-header">
+                        <span>ENERGY</span>
+                        <span id="energy-value">100%</span>
+                    </div>
+                    <div class="bar-container">
+                        <div id="energy-bar" class="stat-bar energy-fill" style="width: 100%;"></div>
+                    </div>
+                </div>
+
+                <div class="credit-card">
+                    <span class="label">CREDITS:</span>
+                    <span id="credits-value" class="credit-val">🪙 250 ¥</span>
+                </div>
+
+                <div class="inventory-card">
+                    <div class="label">INVENTORY:</div>
+                    <ul id="inventory-list" class="inventory-items">
+                        <li class="item-tag">Deck: Cyber-Onyx</li>
+                    </ul>
+                </div>
+
+                <div class="log-indicator">
+                    <span class="pulse-dot"></span>
+                    <span id="system-feed">AI CORE ACTIVE</span>
+                </div>
+            </aside>
+
+            <!-- Center Stage: Story Terminal & Actions -->
+            <section class="terminal-container">
+                <div class="terminal-bar">
+                    <div class="terminal-dots">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                    </div>
+                    <span class="terminal-tab">TRANSMISSION_FEED.log</span>
+                    <span id="chapter-badge" class="chapter-tag">EPISODE 1</span>
+                </div>
+
+                <div class="terminal-body">
+                    <div id="story-image-container" class="story-visual">
+                        <div class="ascii-art" id="ascii-display">
+  ___ _   _ ___ _____ ___ ___  _   _ _  __
+ / __\ \ / / _ ) __| _ \ _ \/ / / | |/ /
+| (__ \ V /| _ \ _||  _/  _/ _ \ |_| ' < 
+ \___| |_| |___/___|_| |_| \___/\___/_|\_\
+                        </div>
+                    </div>
+
+                    <div id="story-content" class="story-text">
+                        <!-- Story dynamically injected here -->
+                    </div>
+
+                    <div id="choices-container" class="choices-box">
+                        <!-- Choices dynamically injected here -->
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="game-footer">
+            <p>Developed with AI Assistant for MLH Hacktoberfest Challenge | <a href="https://github.com/RICH-KEED" target="_blank" rel="noopener">@RICH-KEED</a></p>
+        </footer>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
